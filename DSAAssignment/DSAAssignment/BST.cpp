@@ -73,11 +73,11 @@ bool BST::isEmpty(BinaryNode* t)
 {
 	return (t == NULL);
 }
-BinaryNode* BST::search(ItemType target)
+BinaryNode* BST::searchPath(ItemType target)
 {
 	return search(root, target);
 }
-BinaryNode* BST::search(BinaryNode* t, ItemType target)
+BinaryNode* BST::searchPath(BinaryNode* t, ItemType target)
 {
 	if (t == NULL)
 	{
@@ -102,13 +102,36 @@ BinaryNode* BST::search(BinaryNode* t, ItemType target)
 				{
 					cout << "L" << endl;
 					return search(t->left, target);
+					
 				}
 				else         // search in right subtree
 				{
 					cout << "R" << endl;
 					return search(t->right, target);
+					
 				}
 		}
+	}
+
+}
+BinaryNode* BST::search(ItemType target)
+{
+	return search(root, target);
+}
+
+BinaryNode* BST::search(BinaryNode* t, ItemType target)
+{
+	if (t == NULL)	         // item not found
+		return NULL;
+	else
+	{
+		if (t->item == target) // item found
+			return t;
+		else
+			if (target < t->item)  // search in left subtree
+				return search(t->left, target);
+			else                   // search in right subtree
+				return search(t->right, target);
 	}
 
 }
@@ -118,19 +141,26 @@ void BST::insert(ItemType item)
 }
 void BST::insert(BinaryNode* &t, ItemType item)
 {
-	if (t == NULL)
+	if (search(item) == NULL)
 	{
-		BinaryNode *newNode = new BinaryNode;
-		newNode->item = item;
-		newNode->left = NULL;
-		newNode->right = NULL;
-		t = newNode;
+		if (t == NULL)
+		{
+			BinaryNode *newNode = new BinaryNode;
+			newNode->item = item;
+			newNode->left = NULL;
+			newNode->right = NULL;
+			t = newNode;
+		}
+		else
+			if (item < t->item)
+				insert(t->left, item);  // insert in left subtree
+			else
+				insert(t->right, item); // insert in right subtree
 	}
 	else
-		if (item < t->item)
-			insert(t->left, item);  // insert in left subtree
-		else
-			insert(t->right, item); // insert in right subtree
+	{
+		cout << "Item could not be added because it already exists!" << endl;
+	}
 }
 void BST::inorder()
 {

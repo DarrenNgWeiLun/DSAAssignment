@@ -12,6 +12,8 @@ public:
 	BinaryNode* search(ItemType target);
 	BinaryNode* search(BinaryNode* t, ItemType target);
 
+	BinaryNode* searchPath(ItemType target);
+	BinaryNode* searchPath(BinaryNode* t, ItemType target);
 	// add an item to the binary search tree
 	void insert(ItemType item);
 	void insert(BinaryNode* &t, ItemType item);
