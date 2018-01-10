@@ -276,3 +276,28 @@ void BST::remove(BinaryNode* &t, ItemType target)
 				}
 	}
 }
+void BST::printLevelOrder()
+{
+	return printLevelOrder(root);
+}
+void BST::printLevelOrder(BinaryNode*t)
+{
+	int h = getHeight(t);
+	int i;
+	for (i = 1; i <= h; i++)
+		printGivenLevel(t, i);
+}
+
+/* Print nodes at a given level */
+void BST::printGivenLevel(BinaryNode* t, int level)
+{
+	if (t == NULL)
+		return;
+	if (level == 1)
+		printf("%d ", t->item);
+	else if (level > 1)
+	{
+		printGivenLevel(t->left, level - 1);
+		printGivenLevel(t->right, level - 1);
+	}
+}
