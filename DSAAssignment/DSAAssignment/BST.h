@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "BinaryNode.h"
+#include "Queue.h"
 class BST
 {
 private:
@@ -48,8 +49,8 @@ public:
 	bool isBalanced();
 	bool isBalanced(BinaryNode* t);
 
-	void printLevelOrder();
-	void printLevelOrder(BinaryNode*t);
-	void printGivenLevel(BinaryNode*t, int level);
+	void printLevelOrder(Queue q);
+	void printLevelOrder(BinaryNode*t, Queue q);
+	void printGivenLevel(BinaryNode*t, int level, Queue q);
 };
 
