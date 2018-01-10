@@ -49,8 +49,8 @@ public:
 	bool isBalanced();
 	bool isBalanced(BinaryNode* t);
 
-	void printLevelOrder(Queue q);
-	void printLevelOrder(BinaryNode*t, Queue q);
-	void printGivenLevel(BinaryNode*t, int level, Queue q);
+	void printLevelOrder(Queue &q);
+	void printLevelOrder(BinaryNode*t, Queue &q);
+	void printGivenLevel(BinaryNode*t, int level, Queue &q);
 };
 

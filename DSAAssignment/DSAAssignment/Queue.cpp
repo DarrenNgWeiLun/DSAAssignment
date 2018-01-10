@@ -159,3 +159,16 @@ bool Queue::dequeuePosition(ItemType& item, ItemType position)
 	previous->next = temp->next;
 	return success;
 }
+int Queue::getNItem(int n)
+{
+
+	Node*temp = frontNode;
+	int result;
+	
+	for (int i = 1; i < n; i++)
+	{
+		temp = temp->next;
+	}
+	result = temp->item;
+	return result;
+}

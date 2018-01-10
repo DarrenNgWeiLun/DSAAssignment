@@ -38,6 +38,6 @@ public:
 	void displayItems();
 	int size();
 	bool dequeuePosition(ItemType& item, ItemType position);
-
+	int getNItem(int n);
 }; // end Queue
    // End of header file.
