@@ -304,3 +304,30 @@ void BST::printGivenLevel(BinaryNode* t, int level, Queue &q)
 		printGivenLevel(t->right, level - 1, q);
 	}
 }
+
+void BST::printTree()
+{
+	return printTree(root);
+}
+
+void BST::printTree(BinaryNode *t)
+{
+	int h = getHeight(t);
+	for (int i = 1; i <= h; i++)
+	{
+		printTreeLevel(t, i);
+		printf("\n");
+	}
+}
+void BST::printTreeLevel(BinaryNode *t, int level)
+{
+	if (t == NULL)
+		return;
+	if (level == 1)
+		printf("%d ", t->item);
+	else if (level > 1)
+	{
+		printTreeLevel(t->left, level - 1);
+		printTreeLevel(t->right, level - 1);
+	}
+}

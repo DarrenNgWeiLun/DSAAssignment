@@ -52,5 +52,9 @@ public:
 	void printLevelOrder(Queue &q);
 	void printLevelOrder(BinaryNode*t, Queue &q);
 	void printGivenLevel(BinaryNode*t, int level, Queue &q);
+
+	void printTree();
+	void printTree(BinaryNode*t);
+	void printTreeLevel(BinaryNode *t, int level);
 };
 
