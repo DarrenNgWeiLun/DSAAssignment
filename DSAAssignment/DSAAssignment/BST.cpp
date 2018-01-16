@@ -18,19 +18,22 @@ int BST::countNodes()
 }
 int BST::countNodes(BinaryNode* t)
 {
-	if (t == NULL)
-		return 0;
+	if (t == NULL) // if the node does not exists
+		return 0; // no nodes <3
 	else
 	{
 		return countNodes(t->left) + countNodes(t->right) + 1;
+		// recursion is used here.
+		// very accurate;
 	}
 }
 int BST::getHeight()
 {
 	return getHeight(root);
 }
-int BST::getHeight(BinaryNode* t)
+int BST::getHeight(BinaryNode* t) // get the level of the tree.
 {
+	// need this for the queue function so that we can traverse the tree through each level / height
 	if (t == NULL)
 		return 0;
 	else
@@ -38,7 +41,7 @@ int BST::getHeight(BinaryNode* t)
 		int left = getHeight(t->left);
 		int right = getHeight(t->right);
 
-		return 1 + MAX(left, right);
+		return 1 + MAX(left, right); //1 is technically the root before recursion
 	}
 }
 bool BST::isBalanced()
