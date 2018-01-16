@@ -56,5 +56,8 @@ public:
 	void printTree();
 	void printTree(BinaryNode*t);
 	void printTreeLevel(BinaryNode *t, int level);
+
+	void printRow(const BinaryNode *p, const int height, int depth);
+	void getLine(const BinaryNode *root, int depth, vector<int>& vals);
 };
 

@@ -2,6 +2,10 @@
 #include "BST.h"
 #include <iostream>
 #include <string>
+
+#include <iomanip>  
+
+
 #define MAX(a, b) ((a) > (b) ? ( a) : (b))
 using namespace std;
 BST::BST()
@@ -183,16 +187,6 @@ void BST::preorder(BinaryNode* t)
 		inorder(t->left);         // traverse left subtree
 		inorder(t->right);        // traverse right subtree
 	}
-}
-void BST::postorder(BinaryNode* t)
-{
-	if (t != NULL)
-	{
-		inorder(t->left);         // traverse left subtree
-		inorder(t->right);        // traverse right subtree
-		cout << t->item << endl;  // process the item
-	}
-
 }
 
 void BST::remove(ItemType target)
