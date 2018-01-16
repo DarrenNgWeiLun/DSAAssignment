@@ -54,10 +54,9 @@ public:
 	void printGivenLevel(BinaryNode*t, int level, Queue &q);
 
 	void printTree();
-	void printTree(BinaryNode*t);
-	void printTreeLevel(BinaryNode *t, int level);
+	void printTree(BinaryNode*t,int space);
 
-	void printRow(const BinaryNode *p, const int height, int depth);
-	void getLine(const BinaryNode *root, int depth, vector<int>& vals);
+
+	
 };
 

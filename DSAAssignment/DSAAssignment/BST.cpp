@@ -5,7 +5,7 @@
 
 #include <iomanip>  
 
-
+#define COUNT 10
 #define MAX(a, b) ((a) > (b) ? ( a) : (b))
 using namespace std;
 BST::BST()
@@ -305,27 +305,24 @@ void BST::printGivenLevel(BinaryNode* t, int level, Queue &q)
 
 void BST::printTree()
 {
-	return printTree(root);
+	return printTree(root,0);
 }
-
-void BST::printTree(BinaryNode *t)
-{
-	int h = getHeight(t);
-	for (int i = 1; i <= h; i++)
-	{
-		printTreeLevel(t, i);
-		printf("\n");
-	}
-}
-void BST::printTreeLevel(BinaryNode *t, int level)
+void BST::printTree(BinaryNode *t, int space)
 {
 	if (t == NULL)
 		return;
-	if (level == 1)
-		printf("%d ", t->item);
-	else if (level > 1)
-	{
-		printTreeLevel(t->left, level - 1);
-		printTreeLevel(t->right, level - 1);
-	}
+	space += COUNT;
+
+	printTree(t->right, space);
+
+	printf("\n");
+
+	for (int i = COUNT; i < space; i++)
+		printf(" ");
+	printf("%d\n", t->item);
+
+	printTree(t->left, space);
 }
+
+
+
