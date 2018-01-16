@@ -50,6 +50,7 @@ bool BST::isBalanced()
 }
 bool BST::isBalanced(BinaryNode *t)
 {
+	// change the isBlanced code from week 8 is easier to understand
 	if (t != NULL)
 	{
 		if (getHeight(t) < 4)
