@@ -81,15 +81,22 @@ bool BST::isEmpty(BinaryNode* t)
 {
 	return (t == NULL);
 }
-BinaryNode* BST::searchPath(ItemType target)
+BinaryNode* BST::searchPath(ItemType target,int queueLength)
 {
-	return search(root, target);
+	return searchPath(root, target,queueLength);
 }
-BinaryNode* BST::searchPath(BinaryNode* t, ItemType target)
+BinaryNode* BST::searchPath(BinaryNode* t, ItemType target,int queueLength)
 {
+	if (queueLength < target)
+	{
+		cout << "Item Not Found" << endl;
+		return NULL;
+	}
+	else
+	{
 	if (t == NULL)
 	{
-		cout << "Item not found" << endl;// item not found
+		// item not found
 		return NULL;
 	}
 	else
@@ -109,16 +116,17 @@ BinaryNode* BST::searchPath(BinaryNode* t, ItemType target)
 				if (target < t->item)  // search in left subtree
 				{
 					cout << "L" << endl;
-					return search(t->left, target);
-					
+					return searchPath(t->left, target,queueLength);
+
 				}
 				else         // search in right subtree
 				{
 					cout << "R" << endl;
-					return search(t->right, target);
-					
+					return searchPath(t->right, target,queueLength);
+
 				}
 		}
+	}
 	}
 
 }
