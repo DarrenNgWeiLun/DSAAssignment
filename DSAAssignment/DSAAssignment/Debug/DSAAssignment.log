@@ -1,2 +1,1 @@
-﻿  BST.cpp
-  DSAAssignment.vcxproj -> C:\Github\DSAAssignment\DSAAssignment\Debug\DSAAssignment.exe
+﻿LINK : fatal error LNK1104: cannot open file 'C:\Users\Haiqel\Documents\GitHub\DSAAssignment\DSAAssignment\Debug\DSAAssignment.exe'
