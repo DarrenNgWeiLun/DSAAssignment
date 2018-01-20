@@ -257,6 +257,7 @@ void BST::remove(BinaryNode* &t, ItemType target)
 					parent->left = current->right;
 				else
 					parent->right = current->right;;
+				// need to check if the node is a root node;
 			}
 			else
 				if (current->right == NULL)
