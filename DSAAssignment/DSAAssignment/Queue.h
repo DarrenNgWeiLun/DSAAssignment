@@ -4,6 +4,8 @@
 using namespace std;
 /** ADT queue - Pointer-based implementation. */
 typedef int ItemType;
+// Team Member : Haiqel (s10172619H) and Darren (s10175470)
+// All functions are equally important
 class Queue
 {
 private:

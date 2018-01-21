@@ -4,7 +4,8 @@
 #include <string>
 
 #include <iomanip>  
-
+// Team Member : Haiqel (s10172619H) and Darren (s10175470)
+// All functions are equally important
 #define COUNT 10
 #define MAX(a, b) ((a) > (b) ? ( a) : (b))
 using namespace std;
