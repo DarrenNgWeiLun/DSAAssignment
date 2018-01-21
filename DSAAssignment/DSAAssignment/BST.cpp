@@ -268,6 +268,7 @@ void BST::remove(BinaryNode* &t, ItemType target)
 			{
 				current->left == root;
 				insertNode(current->right);
+				cout << "Item has been deleted" << endl;
 			}
 
 
