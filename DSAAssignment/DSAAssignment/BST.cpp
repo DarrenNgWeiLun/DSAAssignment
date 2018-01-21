@@ -182,14 +182,6 @@ void BST::insert(BinaryNode* &t, ItemType item)
 
 
 }
-void BST::insertNode(BinaryNode* u)
-{
-	return insertNode(root,u);
-}
-void BST::insertNode(BinaryNode* &t,BinaryNode* u)
-{
-	t->right = u;
-}
 
 
 void BST::inorder()
@@ -296,10 +288,12 @@ void BST::remove(BinaryNode* &t, ItemType target)
 					if (isLeftChild)
 					{
 						parent->left = current->left;
+						cout << "Item has been deleted" << endl;
 					}
 					else
 					{
-						parent->right = current->left;;
+						parent->right = current->left;
+						cout << "Item has been deleted" << endl;
 					}
 				}
 		
