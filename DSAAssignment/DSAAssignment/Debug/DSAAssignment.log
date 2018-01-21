@@ -1,6 +1,3 @@
-﻿  DSAAssignment.cpp
-c:\github\dsaassignment\dsaassignment\dsaassignment\dsaassignment.cpp(55): warning C4101: 'e': unreferenced local variable
-c:\github\dsaassignment\dsaassignment\dsaassignment\dsaassignment.cpp(133): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\github\dsaassignment\dsaassignment\dsaassignment\dsaassignment.cpp(184): warning C4101: 'param': unreferenced local variable
-c:\github\dsaassignment\dsaassignment\dsaassignment\dsaassignment.cpp(194): warning C4101: 'e': unreferenced local variable
+﻿  BST.cpp
+c:\github\dsaassignment\dsaassignment\dsaassignment\bst.cpp(269): warning C4553: '==': operator has no effect; did you intend '='?
   DSAAssignment.vcxproj -> C:\Github\DSAAssignment\DSAAssignment\Debug\DSAAssignment.exe

@@ -56,6 +56,8 @@ public:
 	void printTree();
 	void printTree(BinaryNode*t,int space);
 
+	void insertNode(BinaryNode* u);
+	void insertNode(BinaryNode* &t, BinaryNode* u);
 
 	
 };

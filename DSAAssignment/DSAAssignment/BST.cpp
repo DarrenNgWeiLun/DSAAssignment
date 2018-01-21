@@ -181,6 +181,16 @@ void BST::insert(BinaryNode* &t, ItemType item)
 
 
 }
+void BST::insertNode(BinaryNode* u)
+{
+	return insertNode(root,u);
+}
+void BST::insertNode(BinaryNode* &t,BinaryNode* u)
+{
+	t->right = u;
+}
+
+
 void BST::inorder()
 {
 	return inorder(root);
@@ -241,6 +251,27 @@ void BST::remove(BinaryNode* &t, ItemType target)
 
 	if (found)
 	{
+		//if value is root.
+		if (current->item == root->item)
+		{
+			if (current->left == NULL && current->right !=NULL)
+			{
+				current->right = root;
+				cout << "Item has been deleted" << endl;
+			}
+			else if (current->right == NULL && current->left != NULL)
+			{
+				current->left = root;
+				cout << "Item has been deleted" << endl;
+			}
+			else if(current->right != NULL && current->left != NULL)
+			{
+				current->left == root;
+				insertNode(current->right);
+			}
+
+
+		}
 		// -----------------------  case 1 : node is a leaf ------------------------
 		if (current->left == NULL && current->right == NULL)
 		{
@@ -274,7 +305,6 @@ void BST::remove(BinaryNode* &t, ItemType target)
 					parent->right = current->right;
 					cout << "Item has been deleted" << endl;
 				}
-				// need to check if the node is a root node;
 			}
 			else
 				if (current->right == NULL)
