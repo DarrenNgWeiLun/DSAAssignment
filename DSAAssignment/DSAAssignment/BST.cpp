@@ -170,6 +170,7 @@ void BST::insert(BinaryNode* &t, ItemType item)
 			newNode->left = NULL;
 			newNode->right = NULL;
 			t = newNode;
+			cout << "Item has been added!"<<endl;
 		}
 		else
 			if (item < t->item)
