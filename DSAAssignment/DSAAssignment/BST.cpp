@@ -157,6 +157,10 @@ void BST::insert(ItemType item)
 }
 void BST::insert(BinaryNode* &t, ItemType item)
 {
+	if (search(item) != NULL)
+	{
+		cout << "Item already exist in tree!" << endl;
+	}
 	if (search(item) == NULL)
 	{
 		if (t == NULL)
@@ -173,10 +177,8 @@ void BST::insert(BinaryNode* &t, ItemType item)
 			else
 				insert(t->right, item); // insert in right subtree
 	}
-	else
-	{
-		cout << "Item could not be added because it already exists!" << endl;
-	}
+
+
 }
 void BST::inorder()
 {
@@ -245,27 +247,45 @@ void BST::remove(BinaryNode* &t, ItemType target)
 				t = NULL;
 			else
 				if (isLeftChild)
+				{
 					parent->left = NULL;
+					cout << "Item has been deleted" << endl;
+				}
+
 				else
+				{
 					parent->right = NULL;
+					cout << "Item has been deleted" << endl;
+				}
 		}
 		else
 			// -----------------------  case 2 : node has only 1 child  ----------------
 			if (current->left == NULL)
 			{
 				if (isLeftChild)
+				{
 					parent->left = current->right;
+					cout << "Item has been deleted" << endl;
+				}
+
 				else
-					parent->right = current->right;;
+				{
+					parent->right = current->right;
+					cout << "Item has been deleted" << endl;
+				}
 				// need to check if the node is a root node;
 			}
 			else
 				if (current->right == NULL)
 				{
 					if (isLeftChild)
+					{
 						parent->left = current->left;
+					}
 					else
+					{
 						parent->right = current->left;;
+					}
 				}
 				else
 					// -----------------------  case 3 : node has 2 children  ------------------
@@ -281,6 +301,11 @@ void BST::remove(BinaryNode* &t, ItemType target)
 					// replace the node’s item with that of the successor
 					current->item = n;
 				}
+	
+	}
+	else
+	{
+		cout << "Item could not be found in tree" << endl;
 	}
 }
 void BST::printLevelOrder(Queue &q)

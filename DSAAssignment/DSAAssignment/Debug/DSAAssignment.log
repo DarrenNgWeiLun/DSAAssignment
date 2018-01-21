@@ -1,6 +1,2 @@
-﻿  DSAAssignment.cpp
-c:\users\acehq\documents\github\dsaassignment\dsaassignment\dsaassignment\dsaassignment.cpp(55): warning C4101: 'e': unreferenced local variable
-c:\users\acehq\documents\github\dsaassignment\dsaassignment\dsaassignment\dsaassignment.cpp(133): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\acehq\documents\github\dsaassignment\dsaassignment\dsaassignment\dsaassignment.cpp(182): warning C4101: 'param': unreferenced local variable
-c:\users\acehq\documents\github\dsaassignment\dsaassignment\dsaassignment\dsaassignment.cpp(192): warning C4101: 'e': unreferenced local variable
-LINK : fatal error LNK1168: cannot open C:\Users\acehq\Documents\GitHub\DSAAssignment\DSAAssignment\Debug\DSAAssignment.exe for writing
+﻿  BST.cpp
+  DSAAssignment.vcxproj -> C:\Github\DSAAssignment\DSAAssignment\Debug\DSAAssignment.exe
