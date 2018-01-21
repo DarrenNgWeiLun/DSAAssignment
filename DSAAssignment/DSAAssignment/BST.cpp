@@ -248,31 +248,13 @@ void BST::remove(BinaryNode* &t, ItemType target)
 			}
 		}
 	}
+	//if value is root.
+	
 
-	if (found)
+
+
+	if (found && current->item != root->item)
 	{
-		//if value is root.
-		if (current->item == root->item)
-		{
-			if (current->left == NULL && current->right !=NULL)
-			{
-				current->right = root;
-				cout << "Item has been deleted" << endl;
-			}
-			else if (current->right == NULL && current->left != NULL)
-			{
-				current->left = root;
-				cout << "Item has been deleted" << endl;
-			}
-			else if(current->right != NULL && current->left != NULL)
-			{
-				current->left == root;
-				insertNode(current->right);
-				cout << "Item has been deleted" << endl;
-			}
-
-
-		}
 		// -----------------------  case 1 : node is a leaf ------------------------
 		if (current->left == NULL && current->right == NULL)
 		{
@@ -319,6 +301,7 @@ void BST::remove(BinaryNode* &t, ItemType target)
 						parent->right = current->left;;
 					}
 				}
+		
 				else
 					// -----------------------  case 3 : node has 2 children  ------------------
 				{
@@ -333,7 +316,10 @@ void BST::remove(BinaryNode* &t, ItemType target)
 					// replace the node’s item with that of the successor
 					current->item = n;
 				}
-	
+	}
+	else if (found && current->item == root->item)
+	{
+		cout << "Root node cannot be deleted" << endl;
 	}
 	else
 	{
