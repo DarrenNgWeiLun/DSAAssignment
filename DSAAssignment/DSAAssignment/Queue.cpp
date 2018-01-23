@@ -168,14 +168,12 @@ int Queue::getNItem(int n)
 	if (temp == NULL)
 	{
 		cout << "Tree is empty" << endl;
-		cout << "item does not exist, thus it will be defaultly labelled as -1" << endl;
 		return -1;
 	}
 	for (int i = 1; i < n; i++)
 	{
 		if (temp->next == NULL)
 		{
-			cout << "item does not exist, thus it will be defaultly labelled as -1" << endl;
 			return -1;
 		}
 		temp = temp->next;

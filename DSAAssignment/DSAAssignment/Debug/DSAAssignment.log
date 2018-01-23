@@ -1,5 +1,5 @@
 ﻿  DSAAssignment.cpp
-c:\users\haiqel\documents\github\dsaassignment\dsaassignment\dsaassignment\dsaassignment.cpp(209): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\haiqel\documents\github\dsaassignment\dsaassignment\dsaassignment\dsaassignment.cpp(284): warning C4101: 'param': unreferenced local variable
-c:\users\haiqel\documents\github\dsaassignment\dsaassignment\dsaassignment\dsaassignment.cpp(302): warning C4101: 'e': unreferenced local variable
+c:\users\haiqel\documents\github\dsaassignment\dsaassignment\dsaassignment\dsaassignment.cpp(214): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\haiqel\documents\github\dsaassignment\dsaassignment\dsaassignment\dsaassignment.cpp(289): warning C4101: 'param': unreferenced local variable
+c:\users\haiqel\documents\github\dsaassignment\dsaassignment\dsaassignment\dsaassignment.cpp(307): warning C4101: 'e': unreferenced local variable
   DSAAssignment.vcxproj -> C:\Users\Haiqel\Documents\GitHub\DSAAssignment\DSAAssignment\Debug\DSAAssignment.exe
