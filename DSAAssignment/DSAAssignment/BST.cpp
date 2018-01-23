@@ -82,13 +82,13 @@ bool BST::isEmpty(BinaryNode* t)
 {
 	return (t == NULL);
 }
-BinaryNode* BST::searchPath(ItemType target,int queueLength)
+BinaryNode* BST::searchPath(ItemType target,Queue queue2)
 {
-	return searchPath(root, target,queueLength);
+	return searchPath(root, target,queue2);
 }
-BinaryNode* BST::searchPath(BinaryNode* t, ItemType target,int queueLength)
+BinaryNode* BST::searchPath(BinaryNode* t, ItemType target,Queue queue2)
 {
-	if (queueLength < target)
+	if (queue2.searchItem(target))
 	{
 		cout << "Item Not Found" << endl;
 		return NULL;
@@ -117,13 +117,13 @@ BinaryNode* BST::searchPath(BinaryNode* t, ItemType target,int queueLength)
 				if (target < t->item)  // search in left subtree
 				{
 					cout << "L" << endl;
-					return searchPath(t->left, target,queueLength);
+					return searchPath(t->left, target,queue2);
 
 				}
 				else         // search in right subtree
 				{
 					cout << "R" << endl;
-					return searchPath(t->right, target,queueLength);
+					return searchPath(t->right, target,queue2);
 
 				}
 		}
@@ -246,13 +246,15 @@ void BST::remove(BinaryNode* &t, ItemType target)
 
 
 
-	if (found && current->item != root->item)
+	if (found)
 	{
 		// -----------------------  case 1 : node is a leaf ------------------------
 		if (current->left == NULL && current->right == NULL)
 		{
 			if (current == t)	// node to be deleted is a root
-				t = NULL;
+			{
+				cout << "Item is root Node" << endl;
+			}
 			else
 				if (isLeftChild)
 				{
@@ -272,13 +274,24 @@ void BST::remove(BinaryNode* &t, ItemType target)
 			{
 				if (isLeftChild)
 				{
-					parent->left = current->right;
+					if (parent == NULL)
+						root = current->right;
+					else
+					{
+						parent->left = current->right;
+					}
+					
 					cout << "Item has been deleted" << endl;
 				}
 
 				else
 				{
-					parent->right = current->right;
+					if (parent == NULL)
+						root = current->right;
+					else
+					{
+						parent->right = current->right;
+					}
 					cout << "Item has been deleted" << endl;
 				}
 			}
@@ -287,12 +300,28 @@ void BST::remove(BinaryNode* &t, ItemType target)
 				{
 					if (isLeftChild)
 					{
-						parent->left = current->left;
+						if (parent == NULL)
+							root = current->left;
+						else
+						{
+
+
+							parent->left = current->left;
+						}
 						cout << "Item has been deleted" << endl;
 					}
 					else
 					{
-						parent->right = current->left;
+						if (parent == NULL)
+						{
+							root = current->left;
+						}
+						else
+						{
+
+
+							parent->right = current->left;
+						}
 						cout << "Item has been deleted" << endl;
 					}
 				}
@@ -312,10 +341,7 @@ void BST::remove(BinaryNode* &t, ItemType target)
 					current->item = n;
 				}
 	}
-	else if (found && current->item == root->item)
-	{
-		cout << "Root node cannot be deleted" << endl;
-	}
+	
 	else
 	{
 		cout << "Item could not be found in tree" << endl;

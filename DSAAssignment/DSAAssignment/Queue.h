@@ -38,6 +38,7 @@ public:
 	bool dequeue(ItemType& item);
 	void getFront(ItemType& item);
 	void displayItems();
+	bool searchItem(int i);
 	int size();
 	bool dequeuePosition(ItemType& item, ItemType position);
 	int getNItem(int n);

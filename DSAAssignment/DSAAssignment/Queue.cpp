@@ -183,3 +183,19 @@ int Queue::getNItem(int n)
 	result = temp->item;
 	return result;
 }
+bool Queue::searchItem(int i)
+{
+	Node *temp;
+	temp = frontNode;
+	while (!isEmpty())
+	{
+		if (temp->item == i)
+		{
+			return true;
+			break;
+		}
+		temp = temp->next;
+		return false;
+	}
+
+}
